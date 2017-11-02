@@ -344,3 +344,15 @@ footer.sticky-footer {
 @media (min-width: 992px) {
   body.sidenav-toggled footer.sticky-footer {
     width: calc(100% - 55px); } }
+
+
+
+#oxy-graph {
+  height: 250px;
+}
+#sm-table{
+  padding: 5px;
+}
+.table td, .table th{
+  padding: 5px;
+}

@@ -81,7 +81,7 @@
   </nav>
   <div class="content-wrapper">
     <div class="container-fluid">
-      <button type="button" class="btn btn-success" style="margin: 10px 0px; padding-right: 800px;">Status: Stable
+      <button type="button" class="btn btn-danger" style="margin: 10px 0px; padding-right: 800px;">Status: MONOXIDE THREAT DETECTED
     </button>
       <div class="row">
         <div class="col-md-6">
@@ -104,7 +104,7 @@
         </div>
         <div class="col-md-6">
 
-          <img src="img/house_emergency1_f1.jpg" height="370px"/>
+          <img src="img/house_emergency1_f2.jpg" height="370px"/>
             <!-- Area Chart Example-->
       <div class="card mb-4">
         <div class="card-header">
@@ -155,7 +155,7 @@
 </tr>
 <tr>
 <th scope="row">Oxygen:</th>
-<td style="color: green;">Normal</td>
+<td style="color: red;">WARNING!!!</td>
 </tr>
 <tr>
 <th scope="row">CO<sub>2</sub>:</th>
@@ -240,11 +240,11 @@ function rand(min,max) {
 
 
 var arrayLength = 30
-var newArray = []
+var newArray1 = []
 
 for(var i = 0; i < arrayLength; i++) {
   var y = rand(20,21) + 1
-  newArray[i] = y
+  newArray1[i] = y
 }
 
 var layout = {
@@ -301,22 +301,26 @@ window.addEventListener('resize', function() { Plotly.Plots.resize(gd); });
 //----------------Edits the CSS in the div---------------//
 Plotly.plot(gd, [{
   x: time,
-  y: newArray,
+  y: newArray1,
   mode: 'lines',
   line: {color: '#80CAF6'}
 }], layout, {displayModeBar: false});
 
 var cnt = 0;
-
+  var counter = 0;
 var interval = setInterval(function() {
 
-  var y = rand(20,21) + 1
-  newArray = newArray.concat(y)
-  newArray.splice(0, 1)
+if(counter < 10 ){
+counter= counter + 0.5;
+console.log(counter);
+}
+  var y = rand(20,21) - counter
+  newArray1 = newArray1.concat(y)
+  newArray1.splice(0, 1)
 
   var data_update = {
     x: [time],
-    y: [newArray]
+    y: [newArray1]
   };
 
   Plotly.update(gd, data_update)
