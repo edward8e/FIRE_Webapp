@@ -11,6 +11,7 @@
   <script type="text/javascript" src="https://cdn.plot.ly/plotly-latest.min.js"></script>
   <!-- Bootstrap core CSS-->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
   <!-- Custom fonts for this template-->
   <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
   <!-- Page level plugin CSS-->
@@ -118,8 +119,8 @@
         </div>
         <div class="col-md-6">
 
-          <!-- <img src="img/house_emergency1_f1.jpg" height="370px"/> -->
-          <div class="sketchfab-embed-wrapper"><iframe width="640" height="480" src="https://sketchfab.com/models/eff1cabaf1d444f2a26917d63086f63b/embed" frameborder="0" allowvr allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" onmousewheel=""></iframe>
+          <img src="img/house_emergency1_f1.jpg" id="layout_photo" height="370px"/>
+          <div class="sketchfab-embed-wrapper" id="layout_3d" style="display:none"><iframe width="640" height="480" src="https://sketchfab.com/models/eff1cabaf1d444f2a26917d63086f63b/embed" frameborder="0" allowvr allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" onmousewheel=""></iframe>
 </div>
             <!-- Area Chart Example-->
       <div class="card mb-4">
@@ -241,6 +242,12 @@
 
 <script>
 
+$('#layout_photo').click(function(){
+  $('#layout_photo').toggle("slow", function() {
+
+    $('#layout_3d').toggle();
+    });
+});
 
 
 
